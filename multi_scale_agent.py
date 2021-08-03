@@ -1725,7 +1725,7 @@ def main():
         f"ws (ws.shape = {ws.shape}) is the set of weights at the end of training."
     )
     print(
-        f"\tColumns = {{right, left, wait}}; rows: integrators ({n_taus}), time integrators ({n_taus}), biases (1))"
+        f"\tColumns = {{right, left, wait}}; rows: integrators ({n_taus}), time integrators ({n_taus}), biases (1)"
     )
     print(
         f"ths are the weights for the value function estimation ('critic' in actor-critic learning)."
