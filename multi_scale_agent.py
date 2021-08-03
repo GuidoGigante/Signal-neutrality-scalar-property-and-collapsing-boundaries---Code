@@ -1731,16 +1731,16 @@ def main():
         f"ths are the weights for the value function estimation ('critic' in actor-critic learning)."
     )
     print(
-        f"weights_history is a dictionary logging the weights during a sample training steps."
+        f"weights_history is a dictionary logging the weights during a sample of training steps."
     )
     print(
         f"training_outputs is a Pandas DataFrame recording all the mu values,"
     )
     print(
-        f"\tthe final action (0=right, 1=left, 2=wait), the reward delivered,"
+        f"\tthe final action (0=right, 1=left, 2=wait), the reward delivered (r),"
     )
     print(
-        f"\tand the reaction time (number of time steps) for each training trial."
+        f"\tand the reaction time (rt, number of time steps) for each training trial."
     )
     print(
         f"perform is a 2-ple: average reward obtained and average response time (number of time steps) at the end of training."
@@ -1813,7 +1813,7 @@ def main():
 
     print(f"These are stats for each action (0='right', 1='left', 2='wait'),")
     print(
-        f"\tat the end of training, on a sample of mus extracted from the same Gaussian used for training."
+        f"\tat the end of training, on a sample of mus extracted from the same Gaussian used for training:"
     )
     action_stats = episodes.copy()
     action_stats["rt"] *= train_agent_data["dt"]
@@ -1866,7 +1866,7 @@ def main():
         end_to_n_samples=100,
     )
     print(
-        f"Shadlen dist = {delta_sigma_diff_mean:1.4f} (on {delta_t} time steps)"
+        f"Signal neutrality dist = {delta_sigma_diff_mean:1.4f} (on {delta_t} time steps). This is the inverse of the signal neutrality measure in the paper."
     )
 
     g = episodes.copy()
@@ -1880,7 +1880,7 @@ def main():
     cv_mag_min_ratio = cv_max / cv_min
     del g
 
-    print(f"Delta CV = {cv_max - cv_min:1.3f}")
+    print(f"Delta CV = {cv_max - cv_min:1.3f}. This is the inverse of the scalar property measure in the paper.")
 
     # Compute the curves for the plot à la Shadlen
     align2start, align2decision = compute_shadlen(
@@ -1894,6 +1894,7 @@ def main():
         end_to_n_samples=100,
     )
 
+    print("This is a sample of the lines in a plot á la Shadlen:")
     print(align2decision.head())
 
 
