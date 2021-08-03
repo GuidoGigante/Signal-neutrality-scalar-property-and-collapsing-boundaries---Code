@@ -2,11 +2,7 @@ import numpy as np
 import pandas as pd
 from numba import jit
 import numba.typed as numba_type
-
-from scipy import optimize
-from scipy.stats import norm
 from scipy import special
-
 import time
 
 
