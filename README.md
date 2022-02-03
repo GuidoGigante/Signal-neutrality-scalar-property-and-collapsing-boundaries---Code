@@ -1,5 +1,5 @@
 # Signal-neutrality-scalar-property-and-collapsing-boundaries---Code
-Python code to replicate the results of the paper "Signal neutrality, scalar property, and collapsing boundaries as consequences of a learned multi-time scale strategy".
+Python code to replicate the results of the paper "Signal neutrality, scalar property, and collapsing boundaries as consequences of a learned multi-timescale strategy".
 
 The only .py file includes all the needed functions (apart from quite standard Python imports, like numpy, pandas, scipy.special, and time). It also includes a main function that trains an agent and uses it to generate a number of episodes to compute relevant statistics (like performance, average response times, signal neutrality and scalar property metrics, etc.) to illustrate the use of the different functions.
 
